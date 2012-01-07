@@ -1,0 +1,13 @@
+[Desktop Entry]
+Encoding=UTF-8
+Version=1.0
+Name=Lock
+Exec=/usr/bin/orientationlock
+Icon=/home/user/.config/OrientationLock/current.png
+Terminal=false
+Type=Application
+Categories=System;
+X-Window-Icon=
+X-HildonDesk-ShowInToolbar=true
+X-Osso-Type=application/x-executable
+
