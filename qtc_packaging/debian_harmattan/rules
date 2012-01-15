@@ -51,7 +51,6 @@ install: build
 	# Add here commands to install the package into debian/orientationlock.
 	$(MAKE) INSTALL_ROOT="$(CURDIR)"/debian/orientationlock install
 
-
 # Build architecture-independent files here.
 binary-indep: build install
 # We have nothing to do by default.

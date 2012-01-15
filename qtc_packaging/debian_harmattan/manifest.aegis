@@ -1,4 +1,4 @@
-AutoGenerateAegisFile
+
 <!-- Aegis manifest declares the security credentials required by an
      application to run correctly. By default, a manifest file will be
      created or updated automatically as a part of build.
@@ -14,7 +14,7 @@ AutoGenerateAegisFile
       * Alternatively, it can also be completely empty.
 
      To provide a manifest yourself:
-
+AutoGenerateAegisFile
       * List the correct credentials for the application in this file.
       * Some commented-out examples of often required tokens are provided.
       * Ensure the path to your application binary given in
@@ -46,7 +46,7 @@ AutoGenerateAegisFile
 		<credential name="TrackerReadAccess" />
 	-->
 
-		<!-- Read and write access to data stored in tracker. -->
+        <!-- Read and write access to data stored in tracker. -->
 	<!--
 		<credential name="TrackerWriteAccess" />
 	-->
@@ -63,8 +63,10 @@ AutoGenerateAegisFile
 		<credential name="GRP::audio" />
 	-->
 
-	</request>
+        <credential name="CAP::chown" />
+    </request>
 
-	<for path="/opt/OrientationLock/bin/OrientationLock" />
-	<for path="applauncherd-launcher::/usr/bin/applauncherd.bin" id="" />
+    <for path="/opt/orientationlock/bin/orientationlock" />
+    <for path="/opt/orientationlock/bin/populate.sh" />
+    <for path="applauncherd-launcher::/usr/bin/applauncherd.bin" id="" />
 </aegis>

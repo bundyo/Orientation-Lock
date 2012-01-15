@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cp /opt/orientationlock/bin/populate.sh
+
+exit 0

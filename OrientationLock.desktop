@@ -2,7 +2,7 @@
 Encoding=UTF-8
 Version=1.0
 Name=Lock
-Exec=/usr/bin/orientationlock
+Exec=/opt/orientationlock/bin/orientationlock
 Icon=/home/user/.config/OrientationLock/current.png
 Terminal=false
 Type=Application

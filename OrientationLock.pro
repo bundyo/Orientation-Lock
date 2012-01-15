@@ -4,11 +4,11 @@
 #
 #-------------------------------------------------
 
-QT       += core
-QT       -= gui
+QT       += core gui
+#QT       -= gui
 
 TARGET = orientationlock
-CONFIG   += console
+CONFIG   += console meegotouch
 CONFIG   -= app_bundle
 
 TEMPLATE = app
@@ -16,20 +16,24 @@ TEMPLATE = app
 SOURCES += main.cpp
 
 unix:!symbian:!maemo5 {
-    target.path = /usr/bin
+    target.path = /opt/orientationlock/bin
     INSTALLS += target
 
+    shell.files = populate.sh
+    shell.path = /opt/orientationlock/bin
     desktopfile.files = $${TARGET}.desktop
     desktopfile.path = /usr/share/applications
-    icon.files = unlocked.png locked_portrait.png locked_landscape.png current.png
-    icon.path = /home/user/.config/OrientationLock
+    icon.files = unlocked.png locked_portrait.png locked_landscape.png
+    icon.path = /opt/orientationlock/icons
 
     !isEmpty(desktopfile.path) {
         export(icon.files)
         export(icon.path)
         export(desktopfile.files)
         export(desktopfile.path)
-        INSTALLS += icon desktopfile
+        export(shell.files)
+        export(shell.path)
+        INSTALLS += icon desktopfile shell
     }
 }
 
@@ -41,6 +45,7 @@ OTHER_FILES += \
     qtc_packaging/debian_harmattan/control \
     qtc_packaging/debian_harmattan/compat \
     qtc_packaging/debian_harmattan/changelog \
-    OrientationLock.desktop
+    OrientationLock.desktop \
+    qtc_packaging/debian_harmattan/postinst
 
 HEADERS +=
